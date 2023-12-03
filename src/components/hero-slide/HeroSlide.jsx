@@ -1,4 +1,4 @@
-import React, { useEffect, useRef,useHistory, useState } from "react";
+import React, { useEffect, useRef, useHistory, useState } from "react";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import tmdbApi, { category, movieType } from "../../api/tmdbApi";
@@ -6,7 +6,6 @@ import apiConfig from "../../api/apiConfig";
 import Button, { OutlineButton } from "../button/Button";
 import Modal, { ModalContent } from "../modal/Modal";
 import "./hero-slide.scss";
-
 
 const HeroSlide = () => {
   SwiperCore.use([Autoplay]);
@@ -69,6 +68,7 @@ const HeroSlideItem = (props) => {
 
     if (videos.results.length > 0) {
       const videoSrc = "https://www.youtube.com/embed/" + videos.results[0].key;
+      console.log(videoSrc);
       modal
         .querySelector(".modal__content > ifram")
         .setAttribute("src", videoSrc);

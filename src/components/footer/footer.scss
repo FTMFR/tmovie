@@ -1,4 +1,4 @@
-@use '../../SCSS/' as *;
+@use "../../SCSS/" as *;
 
 .footer {
     position: relative;
@@ -28,10 +28,11 @@
             @include flex(flex-start, flex-start);
             flex-direction: column;
             margin-top: 1rem;
+
             font-size: 1.5rem;
             font-weight: 600;
 
-            &>*~* {
+            & > * ~ * {
                 margin-top: 1rem;
             }
         }

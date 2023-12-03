@@ -1,8 +1,7 @@
-@use '../../SCSS/' as *;
+@use "../../SCSS/" as *;
 
 .modal {
-    @include flex (center, center);
-
+    @include flex(center, center);
     position: fixed;
     z-index: 100;
     top: 0;
@@ -10,11 +9,11 @@
     right: 0;
     bottom: 0;
     overflow: auto;
-    background-color: rgba($color: $black, $alpha: .4);
+    background-color: rgba($color: $black, $alpha: 0.4);
     opacity: 0;
     visibility: hidden;
 
-    &.active{
+    &.active {
         opacity: 1;
         visibility: visible;
     }
@@ -25,7 +24,7 @@
         width: 50%;
         opacity: 0;
         transform: translateY(-250px);
-        transition: transform .6s ease , opacity .6s ease;
+        transition: transform 0.6s ease, opacity 0.6s ease;
         position: relative;
 
         @include tablet {
@@ -40,14 +39,13 @@
             cursor: pointer;
 
             &:hover {
-                color:  $main-color;
+                color: $main-color;
             }
         }
     }
 
     &.active &__content {
         opacity: 1;
-        transform: translateY();
+        transform: translateY(0);
     }
-
 }
