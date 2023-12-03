@@ -27,7 +27,6 @@ const Header = () => {
   const headerRef = useRef(null);
 
   const active = headerNav.findIndex((e) => e.path === pathname);
-  console.log(active);
 
   /**
    * this block code for scroll behavior and header.

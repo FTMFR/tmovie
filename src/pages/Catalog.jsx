@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import { useParams } from "react-router-dom";
 
 const Catalog = () => {
-  return (
-    <div>Catalog</div>
-  )
-}
+  const { category } = useParams();
+  console.log(category)
 
-export default Catalog
+  return <div>Catalog</div>;
+};
+
+export default Catalog;

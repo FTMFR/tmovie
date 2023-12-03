@@ -17,12 +17,6 @@ export const tvType = {
     on_the_air: 'on_the_air'
 }
 
-/**
- * https://api.themoviedb.org/3/movie/popular
- * 
- */
-
-
 const tmdbApi = {
     getMoviesList: (type, params) => {
         const url = 'movie/' + movieType[type];

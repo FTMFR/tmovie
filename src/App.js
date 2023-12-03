@@ -9,7 +9,7 @@ import Apps from './config/Routes';
 
 
 
-function App() {
+const App = (props) => {
     return (
         <Router>
             <Routes>
