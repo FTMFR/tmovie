@@ -1,12 +1,10 @@
 import React from "react";
-
-import { Route, Routes } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Catalog from "../pages/Catalog";
-import Detail from "../pages/Detail";
+import Detail from "../pages/detail/Detail";
 
-const RoutesJs = () => {
+const Apps = () => {
   return (
     <Routes>
       <Route path="/:category/search/:keyword" element={<Catalog />} />
@@ -17,4 +15,4 @@ const RoutesJs = () => {
   );
 };
 
-export default RoutesJs;
+export default Apps;
