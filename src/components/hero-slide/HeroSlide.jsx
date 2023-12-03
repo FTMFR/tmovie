@@ -21,6 +21,7 @@ const HeroSlide = () => {
         });
         setMovieItems(response.results.slice(1, 4));
         console.log(response, "this is working!");
+        console.log(movieItems)
       } catch {
         console.log("error");
       }
