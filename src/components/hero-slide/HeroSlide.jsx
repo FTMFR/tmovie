@@ -60,7 +60,6 @@ const HeroSlide = () => {
 
 const HeroSlideItem = (props) => {
   let navigate = useNavigate();
-  // let history = useHistory();
   const item = props.item;
   const background = apiConfig.originalImage(
     item.backdrop_path ? item.backdrop_path : item.poster_path

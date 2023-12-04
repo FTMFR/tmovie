@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useHistory, useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button, { OutlineButton } from "../button/Button";
 import MovieCard from "../movie-card/MovieCard";
 import Input from "../input/Input";
@@ -43,12 +43,12 @@ const MovieGrid = (props) => {
     let response = null;
     if (keyword === undefined) {
       const params = {
-        page: page + 1,
+        page: page + 1
       };
       switch (props.category) {
         case category.movie:
           response = await tmdbApi.getMoviesList(movieType.upcoming, {
-            params,
+            params
           });
           break;
         default:
@@ -61,7 +61,7 @@ const MovieGrid = (props) => {
       };
       response = await tmdbApi.search(props.category, { params });
     }
-    setItems(...items, ...response.results);
+    setItems([...items, ...response.results]);
     setPage(page + 1);
     console.log("loadmore");
   };
@@ -88,15 +88,15 @@ const MovieGrid = (props) => {
 };
 
 const MovieSearch = (props) => {
-  let history = useHistory();
+  let navigate= useNavigate();
   const [keyword, setKeyword] = useState(props.keyword ? props.keyword : "");
   const goToSearch = useCallback(() => {
     if (keyword.trim().length > 0) {
-      history.push(`
+      navigate(`
             ${category[props.category]}/search/${keyword}
             `);
     }
-  }, [keyword, props.category, history]);
+  }, [keyword, props.category, navigate]);
 
   useEffect(() => {
     const enterEvent = (e) => {
