@@ -6,6 +6,7 @@ import apiConfig from "../../api/apiConfig";
 import Button, { OutlineButton } from "../button/Button";
 import Modal, { ModalContent } from "../modal/Modal";
 import "./hero-slide.scss";
+import { useNavigate } from "react-router-dom";
 
 const HeroSlide = () => {
   SwiperCore.use([Autoplay]);
@@ -21,7 +22,7 @@ const HeroSlide = () => {
         });
         setMovieItems(response.results.slice(1, 4));
         console.log(response, "this is working!");
-        console.log(movieItems)
+        console.log(movieItems);
       } catch {
         console.log("error");
       }
@@ -58,7 +59,8 @@ const HeroSlide = () => {
 };
 
 const HeroSlideItem = (props) => {
-  let history = useHistory();
+  let navigate = useNavigate();
+  // let history = useHistory();
   const item = props.item;
   const background = apiConfig.originalImage(
     item.backdrop_path ? item.backdrop_path : item.poster_path
@@ -90,7 +92,7 @@ const HeroSlideItem = (props) => {
           <h2 className="title">{item.title}</h2>
           <div className="overview">{item.overview}</div>
           <div className="btns">
-            <Button onClick={() => history.push("/movie/" + item.id)}>
+            <Button onClick={() => navigate("/movie/" + item.id)}>
               Watch now
             </Button>
             <OutlineButton onClick={setModalActive}>

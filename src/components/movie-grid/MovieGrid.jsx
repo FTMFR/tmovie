@@ -88,7 +88,7 @@ const MovieGrid = (props) => {
 };
 
 const MovieSearch = (props) => {
-  const history = useHistory();
+  let history = useHistory();
   const [keyword, setKeyword] = useState(props.keyword ? props.keyword : "");
   const goToSearch = useCallback(() => {
     if (keyword.trim().length > 0) {
