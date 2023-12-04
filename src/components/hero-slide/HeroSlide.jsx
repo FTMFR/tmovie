@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useHistory, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import tmdbApi, { category, movieType } from "../../api/tmdbApi";
@@ -28,7 +28,7 @@ const HeroSlide = () => {
       }
     };
     getMovies();
-  }, []);
+  }, [movieItems]);
 
   return (
     <div className="hero-slide">
