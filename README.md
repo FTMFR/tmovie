@@ -1,7 +1,6 @@
 Dive into the World of Movies and TV Shows
 
 ![prev](https://github.com/FTMFR/tmovie/assets/89690674/d5ac57c2-3c0d-41c7-841b-506dd388f910)
-![prev](https://github.com/FTMFR/tmovie/assets/89690674/d5ac57c2-3c0d-41c7-841b-506dd388f910)
 
 This website is your one-stop shop for exploring movies and TV shows, built with HTML, CSS, and Vanilla JavaScript. It leverages the free TMDB API to bring you a wealth of content.
 
